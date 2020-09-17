@@ -1,6 +1,7 @@
 package Tests;
 
 import com.sun.jdi.Value;
+import org.junit.Assert;
 import org.junit.Test;
 import org.launchcode.techjobs_oo.*;
 
@@ -15,20 +16,21 @@ public class JobTest {
         Job jobClass2 = new Job();
         assertTrue(jobClass1.getId() != jobClass2.getId());
     }
-   // @Test
-//    public void testJobConstructorSetsAllFields() {
-//        Job test_job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-//            String jobName = test_job.getName();
-//            Employer jobEmployer.toString()  = test_job.getEmployer();
-//            Location jobLocation = test_job.getLocation();
-//            PositionType jobPositionType = test_job.getPositionType();
-//            CoreCompetency jobCoreCompetency = test_job.getCoreCompetency();
-//                assertEquals(jobName = "Product tester", jobName = "Product tester");
-//                assertEquals(jobEmployer.toString() = "ACME", jobEmployer.toString(jobEmployer) = "ACME");
-//                assertEquals(jobLocation.toString(jobLocation) = "Desert", jobLocation.toString(jobLocation) = "Desert");
-//                assertEquals(jobPositionType.toString(jobPositionType) = "Quality control", jobPositionType.toString(jobPositionType) = "Quality control");
-//                assertEquals(jobCoreCompetency.toString(jobCoreCompetency) = "Persistence", jobCoreCompetency.toString(jobCoreCompetency) = "Persistence");
-//    }
+    @Test
+    public void testJobConstructorSetsAllFields() {
+        Job test_job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+            String jobName = test_job.getName();
+            Employer jobEmployer = test_job.getEmployer();
+            Location jobLocation = test_job.getLocation();
+            PositionType jobPositionType = test_job.getPositionType();
+            CoreCompetency jobCoreCompetency = test_job.getCoreCompetency();
+                assertEquals(jobName = "Product tester", jobName = "Product tester");
+                assertTrue(jobEmployer instanceof Employer);
+                assertTrue(jobLocation instanceof Location);
+                assertTrue(jobPositionType instanceof PositionType);
+                assertTrue(jobCoreCompetency instanceof CoreCompetency);
+    }
+
     @Test
     public void testJobsForEquality(){
         Job test_job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
