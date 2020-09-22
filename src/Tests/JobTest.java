@@ -1,7 +1,6 @@
 package Tests;
 
-import com.sun.jdi.Value;
-import org.junit.Assert;
+
 import org.junit.Test;
 import org.launchcode.techjobs_oo.*;
 
@@ -24,7 +23,7 @@ public class JobTest {
             Location jobLocation = test_job.getLocation();
             PositionType jobPositionType = test_job.getPositionType();
             CoreCompetency jobCoreCompetency = test_job.getCoreCompetency();
-                assertEquals(jobName = "Product tester", jobName = "Product tester");
+                assertEquals("Product tester", jobName );
                 assertTrue(jobEmployer instanceof Employer);
                 assertTrue(jobLocation instanceof Location);
                 assertTrue(jobPositionType instanceof PositionType);

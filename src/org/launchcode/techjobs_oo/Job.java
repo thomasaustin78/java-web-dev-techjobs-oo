@@ -1,5 +1,6 @@
 package org.launchcode.techjobs_oo;
 
+import java.lang.reflect.Field;
 import java.util.Objects;
 
 public class Job {
@@ -29,6 +30,28 @@ public class Job {
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
     }
+
+    public String toString() {
+        if (name == "" && employer.toString() == "" && location.toString() == "" && positionType.toString() == "" && coreCompetency.toString() == "") {
+            return "\r\n" + "Id: " + id + "\r\n" + "Name: data not available" + "\r\n" + "Employer: data not available" + "\r\n" + "Location: data not available" + "\r\n" + "Position type: data not available" + "\r\n" + "Core competency: data not available" + "\r\n";
+        } else if (name == "" && employer.toString() == "" && location.toString() == "" && positionType.toString() == "") {
+            return "\r\n" + "Id: " + id + "\r\n" + "Name: data not available" + "\r\n" + "Employer: data not available" + "\r\n" + "Location: data not available" + "\r\n" + "Position type: data not available" + "\r\n" + "Core competency: " + coreCompetency + "\r\n";
+
+        } else if (name == "" && employer.toString() == "" && location.toString() == "") {
+            return "\r\n" + "Id: " + id + "\r\n" + "Name: data not available" + "\r\n" + "Employer: data not available" + "\r\n" + "Location: data not available" + "\r\n" + "Position type: " + positionType + "\r\n" + "Core competency: " + coreCompetency + "\r\n";
+
+        } else if (name == "" && employer.toString() == "") {
+            return "\r\n" + "Id: " + id + "\r\n" + "Name: data not available" + "\r\n" + "Employer: data not available" + "\r\n" + "Location: " + location + "\r\n" + "Position type: " + positionType + "\r\n" + "Core competency: " + coreCompetency + "\r\n";
+
+        } else if (name == "") {
+            return "\r\n" + "Id: " + id + "\r\n" + "Name: data not available" + "\r\n" + "Employer: " + employer + "\r\n" + "Location: " + location + "\r\n" + "Position type: " + positionType + "\r\n" + "Core competency: " + coreCompetency + "\r\n";
+
+        }
+        else {
+            return "\r\n" + "Id: " + id + "\r\n" + "Name: " + name + "\r\n" + "Employer: " + employer + "\r\n" + "Location: " + location + "\r\n" + "Position type: " + positionType + "\r\n" + "Core competency: " + coreCompetency + "\r\n";
+        }
+    }
+
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
 
